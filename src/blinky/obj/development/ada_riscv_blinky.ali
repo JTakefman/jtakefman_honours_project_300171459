@@ -1,0 +1,73 @@
+V "GNAT Lib v13"
+M P W=8
+A -Og
+A -gnatA
+A --RTS=/home/jordan-takefman/.local/share/alire/toolchains/gnat_riscv64_elf_13.2.1_938f208c/riscv64-elf/lib/gnat/light-rv32i/
+A -fno-tree-loop-distribute-patterns
+A -ffunction-sections
+A -fdata-sections
+A -g
+A -gnatwa
+A -gnatw.X
+A -gnatVa
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatyB
+A -gnatyb
+A -gnatyc
+A -gnaty-
+A -gnatyd
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyI
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyO
+A -gnatyp
+A -gnatyr
+A -gnatyS
+A -gnatyt
+A -gnatyu
+A -gnatyx
+A -gnatW8
+A -mabi=ilp32
+A -misa-spec=20191213
+A -march=rv32imc_zicsr
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U ada_riscv_blinky%b	ada_riscv_blinky.adb	0e761d58 NE OO SU
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada_riscv_blinky.adb	20241112154002 b0d5ec7e ada_riscv_blinky%b
+D interfac.ads		20231016204528 15f799c2 interfaces%s
+D system.ads		20231016204528 28c1d111 system%s
+D s-stoele.ads		20231016204528 ab5468e4 system.storage_elements%s
+G a e
+G c Z b b [ada_riscv_blinky standard 4 11 none]
+X 1 ada_riscv_blinky.adb
+4U11*Ada_Riscv_Blinky 4b11 24l5 24t21
+5m4 Led{2|80M9} 19m4 21m7 21r14
+8m4 Led_Initial{2|80M9} 19r11
+9m4 Led_Toggle{2|80M9} 21r22
+11U14 Sleep 11b14 17l8 17t13 22s7
+12i7 Count{natural} 14r13 15m10 15r19
+X 2 interfac.ads
+38K9*Interfaces 1|1w6 1r22 5r10 8r27 9r26 2|232e15
+80M9*Unsigned_32 1|5r21 8r38 9r37
+X 3 system.ads
+55K9*System 1|2r6 2r35 3|167e11
+85M9*Address
+X 4 s-stoele.ads
+40K16*Storage_Elements 1|2w13 2r42 4|116e28
+106V13*To_Address{3|85M9} 1|6s50
+

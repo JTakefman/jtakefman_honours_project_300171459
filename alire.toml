@@ -1,0 +1,12 @@
+name = "ada_riscv_renode"
+description = "Shiny new project"
+version = "0.1.0-dev"
+
+authors = ["Kevin Dinkel"]
+maintainers = ["Kevin Dinkel <1225857+dinkelk@users.noreply.github.com>"]
+maintainers-logins = ["dinkelk"]
+
+project-files = ["src/blinky/ada_riscv_blinky.gpr", "src/uart/ada_riscv_uart.gpr"]
+
+[[depends-on]]
+gnat_riscv64_elf = "^13.2.1" 

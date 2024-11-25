@@ -1,0 +1,352 @@
+
+ada_riscv_blinky:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010094 <ada_riscv_blinky__sleep.0>:
+   10094:	ff010113          	add	sp,sp,-16
+   10098:	00112623          	sw	ra,12(sp)
+   1009c:	008957b7          	lui	a5,0x895
+   100a0:	44078793          	add	a5,a5,1088 # 895440 <memtop+0x855440>
+   100a4:	0207c063          	bltz	a5,100c4 <ada_riscv_blinky__sleep.0+0x30>
+   100a8:	02f05663          	blez	a5,100d4 <ada_riscv_blinky__sleep.0+0x40>
+   100ac:	fff78793          	add	a5,a5,-1
+   100b0:	fe07dae3          	bgez	a5,100a4 <ada_riscv_blinky__sleep.0+0x10>
+   100b4:	00f00593          	li	a1,15
+   100b8:	00010537          	lui	a0,0x10
+   100bc:	55050513          	add	a0,a0,1360 # 10550 <__modsi3+0x30>
+   100c0:	0d8000ef          	jal	10198 <__gnat_last_chance_handler>
+   100c4:	00e00593          	li	a1,14
+   100c8:	00010537          	lui	a0,0x10
+   100cc:	55050513          	add	a0,a0,1360 # 10550 <__modsi3+0x30>
+   100d0:	0c8000ef          	jal	10198 <__gnat_last_chance_handler>
+   100d4:	00c12083          	lw	ra,12(sp)
+   100d8:	01010113          	add	sp,sp,16
+   100dc:	00008067          	ret
+
+000100e0 <_ada_ada_riscv_blinky>:
+   100e0:	ff010113          	add	sp,sp,-16
+   100e4:	00112623          	sw	ra,12(sp)
+   100e8:	600017b7          	lui	a5,0x60001
+   100ec:	00001737          	lui	a4,0x1
+   100f0:	b0070713          	add	a4,a4,-1280 # b00 <ada_riscv_blinky__sleep.0-0xf594>
+   100f4:	80e7a023          	sw	a4,-2048(a5) # 60000800 <memtop+0x5ffc0800>
+   100f8:	600017b7          	lui	a5,0x60001
+   100fc:	8007a703          	lw	a4,-2048(a5) # 60000800 <memtop+0x5ffc0800>
+   10100:	000016b7          	lui	a3,0x1
+   10104:	b0168693          	add	a3,a3,-1279 # b01 <ada_riscv_blinky__sleep.0-0xf593>
+   10108:	00d74733          	xor	a4,a4,a3
+   1010c:	80e7a023          	sw	a4,-2048(a5)
+   10110:	f85ff0ef          	jal	10094 <ada_riscv_blinky__sleep.0>
+   10114:	fe5ff06f          	j	100f8 <_ada_ada_riscv_blinky+0x18>
+
+00010118 <main>:
+   10118:	fe010113          	add	sp,sp,-32
+   1011c:	00112e23          	sw	ra,28(sp)
+   10120:	000107b7          	lui	a5,0x10
+   10124:	56878793          	add	a5,a5,1384 # 10568 <__gnat_ada_main_program_name>
+   10128:	00f12623          	sw	a5,12(sp)
+   1012c:	fb5ff0ef          	jal	100e0 <_ada_ada_riscv_blinky>
+   10130:	01c12083          	lw	ra,28(sp)
+   10134:	02010113          	add	sp,sp,32
+   10138:	00008067          	ret
+
+0001013c <_start>:
+   1013c:	00040137          	lui	sp,0x40
+   10140:	fd9ff0ef          	jal	10118 <main>
+
+00010144 <putchar>:
+   10144:	00000013          	nop
+
+00010148 <__gnat_exit>:
+   10148:	00000013          	nop
+
+0001014c <ada__exceptions__last_chance_handler__put.0>:
+   1014c:	ff010113          	add	sp,sp,-16 # 3fff0 <__global_pointer$+0x2e205>
+   10150:	00912223          	sw	s1,4(sp)
+   10154:	800004b7          	lui	s1,0x80000
+   10158:	fff48493          	add	s1,s1,-1 # 7fffffff <memtop+0x7ffbffff>
+   1015c:	00812423          	sw	s0,8(sp)
+   10160:	00112623          	sw	ra,12(sp)
+   10164:	00050413          	mv	s0,a0
+   10168:	009504b3          	add	s1,a0,s1
+   1016c:	0100006f          	j	1017c <ada__exceptions__last_chance_handler__put.0+0x30>
+   10170:	00140413          	add	s0,s0,1
+   10174:	0b4000ef          	jal	10228 <gnat__io__put__2>
+   10178:	00940663          	beq	s0,s1,10184 <ada__exceptions__last_chance_handler__put.0+0x38>
+   1017c:	00044503          	lbu	a0,0(s0)
+   10180:	fe0518e3          	bnez	a0,10170 <ada__exceptions__last_chance_handler__put.0+0x24>
+   10184:	00c12083          	lw	ra,12(sp)
+   10188:	00812403          	lw	s0,8(sp)
+   1018c:	00412483          	lw	s1,4(sp)
+   10190:	01010113          	add	sp,sp,16
+   10194:	00008067          	ret
+
+00010198 <__gnat_last_chance_handler>:
+   10198:	ff010113          	add	sp,sp,-16
+   1019c:	00812423          	sw	s0,8(sp)
+   101a0:	00912223          	sw	s1,4(sp)
+   101a4:	00058413          	mv	s0,a1
+   101a8:	00050493          	mv	s1,a0
+   101ac:	000115b7          	lui	a1,0x11
+   101b0:	00010537          	lui	a0,0x10
+   101b4:	58050513          	add	a0,a0,1408 # 10580 <__gnat_ada_main_program_name+0x18>
+   101b8:	5ec58593          	add	a1,a1,1516 # 115ec <__SDATA_BEGIN__>
+   101bc:	00112623          	sw	ra,12(sp)
+   101c0:	254000ef          	jal	10414 <gnat__io__put_line>
+   101c4:	04040463          	beqz	s0,1020c <__gnat_last_chance_handler+0x74>
+   101c8:	00010537          	lui	a0,0x10
+   101cc:	80918593          	add	a1,gp,-2039 # 115f4 <__SDATA_BEGIN__+0x8>
+   101d0:	59850513          	add	a0,a0,1432 # 10598 <__gnat_ada_main_program_name+0x30>
+   101d4:	1e8000ef          	jal	103bc <gnat__io__put__3>
+   101d8:	00048513          	mv	a0,s1
+   101dc:	f71ff0ef          	jal	1014c <ada__exceptions__last_chance_handler__put.0>
+   101e0:	03a00513          	li	a0,58
+   101e4:	044000ef          	jal	10228 <gnat__io__put__2>
+   101e8:	00040513          	mv	a0,s0
+   101ec:	0e4000ef          	jal	102d0 <gnat__io__put>
+   101f0:	00100513          	li	a0,1
+   101f4:	098000ef          	jal	1028c <gnat__io__new_line>
+   101f8:	00010537          	lui	a0,0x10
+   101fc:	5dc50513          	add	a0,a0,1500 # 105dc <__gnat_ada_main_program_name+0x74>
+   10200:	81118593          	add	a1,gp,-2031 # 115fc <__SDATA_BEGIN__+0x10>
+   10204:	210000ef          	jal	10414 <gnat__io__put_line>
+   10208:	268000ef          	jal	10470 <system__machine_reset__stop>
+   1020c:	00010537          	lui	a0,0x10
+   10210:	5b850513          	add	a0,a0,1464 # 105b8 <__gnat_ada_main_program_name+0x50>
+   10214:	81918593          	add	a1,gp,-2023 # 11604 <__SDATA_BEGIN__+0x18>
+   10218:	1a4000ef          	jal	103bc <gnat__io__put__3>
+   1021c:	00048513          	mv	a0,s1
+   10220:	f2dff0ef          	jal	1014c <ada__exceptions__last_chance_handler__put.0>
+   10224:	fcdff06f          	j	101f0 <__gnat_last_chance_handler+0x58>
+
+00010228 <gnat__io__put__2>:
+   10228:	8211c783          	lbu	a5,-2015(gp) # 1160c <system__text_io__initialized>
+   1022c:	ff010113          	add	sp,sp,-16
+   10230:	00812423          	sw	s0,8(sp)
+   10234:	00112623          	sw	ra,12(sp)
+   10238:	00050413          	mv	s0,a0
+   1023c:	02078463          	beqz	a5,10264 <gnat__io__put__2+0x3c>
+   10240:	00a00793          	li	a5,10
+   10244:	02f40663          	beq	s0,a5,10270 <gnat__io__put__2+0x48>
+   10248:	240000ef          	jal	10488 <system__text_io__is_tx_ready>
+   1024c:	fe050ee3          	beqz	a0,10248 <gnat__io__put__2+0x20>
+   10250:	00040513          	mv	a0,s0
+   10254:	00812403          	lw	s0,8(sp)
+   10258:	00c12083          	lw	ra,12(sp)
+   1025c:	01010113          	add	sp,sp,16
+   10260:	2300006f          	j	10490 <system__text_io__put>
+   10264:	218000ef          	jal	1047c <system__text_io__initialize>
+   10268:	00a00793          	li	a5,10
+   1026c:	fcf41ee3          	bne	s0,a5,10248 <gnat__io__put__2+0x20>
+   10270:	224000ef          	jal	10494 <system__text_io__use_cr_lf_for_new_line>
+   10274:	fc050ae3          	beqz	a0,10248 <gnat__io__put__2+0x20>
+   10278:	210000ef          	jal	10488 <system__text_io__is_tx_ready>
+   1027c:	fe050ee3          	beqz	a0,10278 <gnat__io__put__2+0x50>
+   10280:	00d00513          	li	a0,13
+   10284:	20c000ef          	jal	10490 <system__text_io__put>
+   10288:	fc1ff06f          	j	10248 <gnat__io__put__2+0x20>
+
+0001028c <gnat__io__new_line>:
+   1028c:	04a05063          	blez	a0,102cc <gnat__io__new_line+0x40>
+   10290:	ff010113          	add	sp,sp,-16
+   10294:	00812423          	sw	s0,8(sp)
+   10298:	00912223          	sw	s1,4(sp)
+   1029c:	00112623          	sw	ra,12(sp)
+   102a0:	00050493          	mv	s1,a0
+   102a4:	00000413          	li	s0,0
+   102a8:	00140413          	add	s0,s0,1
+   102ac:	00a00513          	li	a0,10
+   102b0:	f79ff0ef          	jal	10228 <gnat__io__put__2>
+   102b4:	fe849ae3          	bne	s1,s0,102a8 <gnat__io__new_line+0x1c>
+   102b8:	00c12083          	lw	ra,12(sp)
+   102bc:	00812403          	lw	s0,8(sp)
+   102c0:	00412483          	lw	s1,4(sp)
+   102c4:	01010113          	add	sp,sp,16
+   102c8:	00008067          	ret
+   102cc:	00008067          	ret
+
+000102d0 <gnat__io__put>:
+   102d0:	fd010113          	add	sp,sp,-48
+   102d4:	02912223          	sw	s1,36(sp)
+   102d8:	41f55493          	sra	s1,a0,0x1f
+   102dc:	00a4c7b3          	xor	a5,s1,a0
+   102e0:	03212023          	sw	s2,32(sp)
+   102e4:	01312e23          	sw	s3,28(sp)
+   102e8:	01412c23          	sw	s4,24(sp)
+   102ec:	02112623          	sw	ra,44(sp)
+   102f0:	02812423          	sw	s0,40(sp)
+   102f4:	00050a13          	mv	s4,a0
+   102f8:	40f484b3          	sub	s1,s1,a5
+   102fc:	00c00913          	li	s2,12
+   10300:	03000993          	li	s3,48
+   10304:	00a00593          	li	a1,10
+   10308:	00048513          	mv	a0,s1
+   1030c:	214000ef          	jal	10520 <__modsi3>
+   10310:	00050413          	mv	s0,a0
+   10314:	00a00593          	li	a1,10
+   10318:	40a48533          	sub	a0,s1,a0
+   1031c:	180000ef          	jal	1049c <__divsi3>
+   10320:	00090793          	mv	a5,s2
+   10324:	00410713          	add	a4,sp,4
+   10328:	fff90913          	add	s2,s2,-1
+   1032c:	01270733          	add	a4,a4,s2
+   10330:	40898433          	sub	s0,s3,s0
+   10334:	fe870fa3          	sb	s0,-1(a4)
+   10338:	00050493          	mv	s1,a0
+   1033c:	00090713          	mv	a4,s2
+   10340:	fc0512e3          	bnez	a0,10304 <gnat__io__put+0x34>
+   10344:	040a4a63          	bltz	s4,10398 <gnat__io__put+0xc8>
+   10348:	ffe78793          	add	a5,a5,-2
+   1034c:	00410693          	add	a3,sp,4
+   10350:	00f686b3          	add	a3,a3,a5
+   10354:	40e787b3          	sub	a5,a5,a4
+   10358:	00f68433          	add	s0,a3,a5
+   1035c:	40d704b3          	sub	s1,a4,a3
+   10360:	00b00913          	li	s2,11
+   10364:	00144503          	lbu	a0,1(s0)
+   10368:	00140413          	add	s0,s0,1
+   1036c:	ebdff0ef          	jal	10228 <gnat__io__put__2>
+   10370:	008487b3          	add	a5,s1,s0
+   10374:	ff2798e3          	bne	a5,s2,10364 <gnat__io__put+0x94>
+   10378:	02c12083          	lw	ra,44(sp)
+   1037c:	02812403          	lw	s0,40(sp)
+   10380:	02412483          	lw	s1,36(sp)
+   10384:	02012903          	lw	s2,32(sp)
+   10388:	01c12983          	lw	s3,28(sp)
+   1038c:	01812a03          	lw	s4,24(sp)
+   10390:	03010113          	add	sp,sp,48
+   10394:	00008067          	ret
+   10398:	00e78693          	add	a3,a5,14
+   1039c:	002686b3          	add	a3,a3,sp
+   103a0:	02d00613          	li	a2,45
+   103a4:	ffe78713          	add	a4,a5,-2
+   103a8:	fec689a3          	sb	a2,-13(a3)
+   103ac:	ffd78793          	add	a5,a5,-3
+   103b0:	00410693          	add	a3,sp,4
+   103b4:	00f686b3          	add	a3,a3,a5
+   103b8:	f9dff06f          	j	10354 <gnat__io__put+0x84>
+
+000103bc <gnat__io__put__3>:
+   103bc:	ff010113          	add	sp,sp,-16
+   103c0:	00912223          	sw	s1,4(sp)
+   103c4:	01212023          	sw	s2,0(sp)
+   103c8:	0005a483          	lw	s1,0(a1)
+   103cc:	0045a903          	lw	s2,4(a1)
+   103d0:	00112623          	sw	ra,12(sp)
+   103d4:	02994663          	blt	s2,s1,10400 <gnat__io__put__3+0x44>
+   103d8:	40a484b3          	sub	s1,s1,a0
+   103dc:	00812423          	sw	s0,8(sp)
+   103e0:	fff48493          	add	s1,s1,-1
+   103e4:	00050413          	mv	s0,a0
+   103e8:	00044503          	lbu	a0,0(s0)
+   103ec:	00140413          	add	s0,s0,1
+   103f0:	e39ff0ef          	jal	10228 <gnat__io__put__2>
+   103f4:	008487b3          	add	a5,s1,s0
+   103f8:	fef918e3          	bne	s2,a5,103e8 <gnat__io__put__3+0x2c>
+   103fc:	00812403          	lw	s0,8(sp)
+   10400:	00c12083          	lw	ra,12(sp)
+   10404:	00412483          	lw	s1,4(sp)
+   10408:	00012903          	lw	s2,0(sp)
+   1040c:	01010113          	add	sp,sp,16
+   10410:	00008067          	ret
+
+00010414 <gnat__io__put_line>:
+   10414:	ff010113          	add	sp,sp,-16
+   10418:	00912223          	sw	s1,4(sp)
+   1041c:	01212023          	sw	s2,0(sp)
+   10420:	0005a483          	lw	s1,0(a1)
+   10424:	0045a903          	lw	s2,4(a1)
+   10428:	00112623          	sw	ra,12(sp)
+   1042c:	02994663          	blt	s2,s1,10458 <gnat__io__put_line+0x44>
+   10430:	40a484b3          	sub	s1,s1,a0
+   10434:	00812423          	sw	s0,8(sp)
+   10438:	fff48493          	add	s1,s1,-1
+   1043c:	00050413          	mv	s0,a0
+   10440:	00044503          	lbu	a0,0(s0)
+   10444:	00140413          	add	s0,s0,1
+   10448:	de1ff0ef          	jal	10228 <gnat__io__put__2>
+   1044c:	008487b3          	add	a5,s1,s0
+   10450:	fef918e3          	bne	s2,a5,10440 <gnat__io__put_line+0x2c>
+   10454:	00812403          	lw	s0,8(sp)
+   10458:	00c12083          	lw	ra,12(sp)
+   1045c:	00412483          	lw	s1,4(sp)
+   10460:	00012903          	lw	s2,0(sp)
+   10464:	00a00513          	li	a0,10
+   10468:	01010113          	add	sp,sp,16
+   1046c:	dbdff06f          	j	10228 <gnat__io__put__2>
+
+00010470 <system__machine_reset__stop>:
+   10470:	ff010113          	add	sp,sp,-16
+   10474:	00112623          	sw	ra,12(sp)
+   10478:	cd1ff0ef          	jal	10148 <__gnat_exit>
+
+0001047c <system__text_io__initialize>:
+   1047c:	00100713          	li	a4,1
+   10480:	82e180a3          	sb	a4,-2015(gp) # 1160c <system__text_io__initialized>
+   10484:	00008067          	ret
+
+00010488 <system__text_io__is_tx_ready>:
+   10488:	00100513          	li	a0,1
+   1048c:	00008067          	ret
+
+00010490 <system__text_io__put>:
+   10490:	cb5ff06f          	j	10144 <putchar>
+
+00010494 <system__text_io__use_cr_lf_for_new_line>:
+   10494:	00000513          	li	a0,0
+   10498:	00008067          	ret
+
+0001049c <__divsi3>:
+   1049c:	06054063          	bltz	a0,104fc <__umodsi3+0x10>
+   104a0:	0605c663          	bltz	a1,1050c <__umodsi3+0x20>
+
+000104a4 <__hidden___udivsi3>:
+   104a4:	00058613          	mv	a2,a1
+   104a8:	00050593          	mv	a1,a0
+   104ac:	fff00513          	li	a0,-1
+   104b0:	02060c63          	beqz	a2,104e8 <__hidden___udivsi3+0x44>
+   104b4:	00100693          	li	a3,1
+   104b8:	00b67a63          	bgeu	a2,a1,104cc <__hidden___udivsi3+0x28>
+   104bc:	00c05863          	blez	a2,104cc <__hidden___udivsi3+0x28>
+   104c0:	00161613          	sll	a2,a2,0x1
+   104c4:	00169693          	sll	a3,a3,0x1
+   104c8:	feb66ae3          	bltu	a2,a1,104bc <__hidden___udivsi3+0x18>
+   104cc:	00000513          	li	a0,0
+   104d0:	00c5e663          	bltu	a1,a2,104dc <__hidden___udivsi3+0x38>
+   104d4:	40c585b3          	sub	a1,a1,a2
+   104d8:	00d56533          	or	a0,a0,a3
+   104dc:	0016d693          	srl	a3,a3,0x1
+   104e0:	00165613          	srl	a2,a2,0x1
+   104e4:	fe0696e3          	bnez	a3,104d0 <__hidden___udivsi3+0x2c>
+   104e8:	00008067          	ret
+
+000104ec <__umodsi3>:
+   104ec:	00008293          	mv	t0,ra
+   104f0:	fb5ff0ef          	jal	104a4 <__hidden___udivsi3>
+   104f4:	00058513          	mv	a0,a1
+   104f8:	00028067          	jr	t0
+   104fc:	40a00533          	neg	a0,a0
+   10500:	00b04863          	bgtz	a1,10510 <__umodsi3+0x24>
+   10504:	40b005b3          	neg	a1,a1
+   10508:	f9dff06f          	j	104a4 <__hidden___udivsi3>
+   1050c:	40b005b3          	neg	a1,a1
+   10510:	00008293          	mv	t0,ra
+   10514:	f91ff0ef          	jal	104a4 <__hidden___udivsi3>
+   10518:	40a00533          	neg	a0,a0
+   1051c:	00028067          	jr	t0
+
+00010520 <__modsi3>:
+   10520:	00008293          	mv	t0,ra
+   10524:	0005ca63          	bltz	a1,10538 <__modsi3+0x18>
+   10528:	00054c63          	bltz	a0,10540 <__modsi3+0x20>
+   1052c:	f79ff0ef          	jal	104a4 <__hidden___udivsi3>
+   10530:	00058513          	mv	a0,a1
+   10534:	00028067          	jr	t0
+   10538:	40b005b3          	neg	a1,a1
+   1053c:	fe0558e3          	bgez	a0,1052c <__modsi3+0xc>
+   10540:	40a00533          	neg	a0,a0
+   10544:	f61ff0ef          	jal	104a4 <__hidden___udivsi3>
+   10548:	40b00533          	neg	a0,a1
+   1054c:	00028067          	jr	t0

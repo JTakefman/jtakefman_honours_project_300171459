@@ -1,7 +1,5 @@
 mach create "litex-naxriscv"
 machine LoadPlatformDescription @nax_litex.repl
-showAnalyzer sysbus.uart
-showAnalyzer sysbus.uart Antmicro.Renode.Analyzers.LoggingUartAnalyzer
 
 sysbus LoadELF @bin/ada_riscv_blinky
 

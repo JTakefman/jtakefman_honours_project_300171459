@@ -10,13 +10,6 @@ cpu0: CPU.VexRiscv @ sysbus
 
 ctrl: Miscellaneous.LiteX_SoC_Controller_CSR32 @ { sysbus 0xf0000800 }
 
-timer0: Timers.LiteX_Timer_CSR32 @ { sysbus 0xf0001000 }
-    -> cpu0@1
-    frequency: 50000000
-
-uart: UART.LiteX_UART @ { sysbus 0xf0001800 }
-    -> cpu0@0
-
 gpio_out: GPIOPort.LiteX_GPIO @ sysbus 0x60000800
     type: Type.Out
     0 -> led0@0

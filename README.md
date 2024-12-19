@@ -36,4 +36,4 @@ From within the container, invoke renode:
   $ renode vexriscv.resc
   ```
 
-You will see the LED state changing back and forth in the console.
+You will see the LED state changing back and forth in the console. See demo.mp4 for an example run.

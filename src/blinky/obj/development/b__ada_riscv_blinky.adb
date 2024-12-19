@@ -27,9 +27,9 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   /home/jordan-takefman/dev/honours_project_ada/minimal_test/ada_riscv_renode/src/blinky/obj/development/ada_riscv_blinky.o
-   --   -L/home/jordan-takefman/dev/honours_project_ada/minimal_test/ada_riscv_renode/src/blinky/obj/development/
-   --   -L/home/jordan-takefman/dev/honours_project_ada/minimal_test/ada_riscv_renode/src/blinky/obj/development/
+   --   /home/jordan-takefman/dev/honours_project_ada/jtakefman_honours_project_300171459/src/blinky/obj/development/ada_riscv_blinky.o
+   --   -L/home/jordan-takefman/dev/honours_project_ada/jtakefman_honours_project_300171459/src/blinky/obj/development/
+   --   -L/home/jordan-takefman/dev/honours_project_ada/jtakefman_honours_project_300171459/src/blinky/obj/development/
    --   -L/home/jordan-takefman/.local/share/alire/toolchains/gnat_riscv64_elf_13.2.1_938f208c/riscv64-elf/lib/gnat/light-rv32i/adalib/
    --   -static
    --   -lgnat

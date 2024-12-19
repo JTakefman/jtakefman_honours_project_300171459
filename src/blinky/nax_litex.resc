@@ -1,13 +1,11 @@
-
-using sysbus
-mach create "litex-vexriscv"
+mach create "litex-naxriscv"
 machine LoadPlatformDescription @nax_litex.repl
 showAnalyzer sysbus.uart
 showAnalyzer sysbus.uart Antmicro.Renode.Analyzers.LoggingUartAnalyzer
 
 sysbus LoadELF @bin/ada_riscv_blinky
 
-cpu0 PC 0x10106
+sysbus.cpu0 PC 0x10106
 machine StartGdbServer 3333
 logLevel -1 sysbus.gpio_out.led0
 logLevel -1 sysbus.gpio_out.led1

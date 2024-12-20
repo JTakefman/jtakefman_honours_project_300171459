@@ -15,7 +15,7 @@ https://github.com/enjoy-digital/litex/wiki/Installation
 
 ## Compiling the Examples
 
-To compile all the example programs, run the following from within the container:
+To compile all the example programs, run the following.
 
   ```
   $ cd ~/jtakefman_honours_project_300171459
@@ -29,7 +29,6 @@ After you have compiled the examples, you can run them on Renode using the instr
 
 ### Running Blinky
 
-From within the container, invoke renode:
 
   ```
   $ cd ~/jtakefman_honours_project_300171459/src/blinky
